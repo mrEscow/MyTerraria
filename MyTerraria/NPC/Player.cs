@@ -228,6 +228,13 @@ namespace MyTerraria.NPC
                     world.SetTile(TileType.NONE, i, j);
                 }
             }
+
+            if (Mouse.IsButtonPressed(Mouse.Button.Right))
+            {
+                int i = (int)(mousePos.X / Tile.TILE_SIZE);
+                int j = (int)(mousePos.Y / Tile.TILE_SIZE);
+                world.SetTile(TileType.GROUND, i, j);
+            }
         }
 
         public override void DrawNPC(RenderTarget target, RenderStates states)
