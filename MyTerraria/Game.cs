@@ -13,7 +13,7 @@ namespace MyTerraria
     {
         World world;       // Мир
         Player player;     // Игрок
-        NpcSlime slime;    // Слизень
+        NpcFastSlime slime;    // Быстрый слизень
 
 
         // Слизни
@@ -30,8 +30,8 @@ namespace MyTerraria
             player.StartPosition = new Vector2f(300,150);
             player.Spawn();
 
-            // Создаем слизня
-            slime = new NpcSlime(world);
+            // Создаем быстрого слизня
+            slime = new NpcFastSlime(world);
             slime.StartPosition = new Vector2f(500, 150);
             slime.Spawn();
 
@@ -46,7 +46,7 @@ namespace MyTerraria
             }
 
             // Включаем прорисовку объектов для визуальной отладки
-            DebugRender.Enabled = true;
+            DebugRender.Enabled = false;
 
         }
 

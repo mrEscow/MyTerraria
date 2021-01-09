@@ -66,6 +66,7 @@
     <Compile Include="MathHelper.cs" />
     <Compile Include="NPC\Npc.cs" />
     <Compile Include="NPC\NpcSlime.cs" />
+    <Compile Include="NPC\NpcFastSlime.cs" />
     <Compile Include="NPC\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

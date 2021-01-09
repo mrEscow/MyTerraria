@@ -231,7 +231,7 @@ namespace MyTerraria.NPC
         {
             bool isMoveLeft = Keyboard.IsKeyPressed(Keyboard.Key.A);
             bool isMoveRight = Keyboard.IsKeyPressed(Keyboard.Key.D);
-            bool isJump = Keyboard.IsKeyPressed(Keyboard.Key.Space);
+            bool isJump = Keyboard.IsKeyPressed(Keyboard.Key.Space) || Keyboard.IsKeyPressed(Keyboard.Key.W) ;
             bool isMove = isMoveLeft || isMoveRight;
 
             // Прыжок

@@ -39,7 +39,7 @@ namespace MyTerraria.NPC
             {
                 if (waitTimer >= TIME_WAIT_JUMP)
                 {
-                    velocity = new Vector2f(Direction * Program.Rand.Next(1, 15), -Program.Rand.Next(8, 15));
+                    velocity = GetJumpVecocity();
                     waitTimer = 0f;
                 }
                 else
@@ -57,6 +57,11 @@ namespace MyTerraria.NPC
         public override void DrawNPC(RenderTarget target, RenderStates states)
         {
 
+        }
+
+        public virtual Vector2f GetJumpVecocity()
+        {
+            return new Vector2f(Direction * Program.Rand.Next(1, 15), -Program.Rand.Next(8, 15));
         }
     }
 }
