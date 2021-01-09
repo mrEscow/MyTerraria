@@ -1,10 +1,7 @@
 ﻿using SFML.Graphics;
+using SFML.System;
 using SFML.Window;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyTerraria
 {
@@ -14,7 +11,9 @@ namespace MyTerraria
 
         public static RenderWindow Window { private set; get; }
         public static Game Game { private set; get; }
-        
+
+        public static float Delta { private set; get; }
+
 
 
         static void Main(string[] args)
@@ -32,12 +31,15 @@ namespace MyTerraria
             //загрузка контента
             Content.Load();
 
-            Game = new Game();      // Создаем новый объект класса игры
-            
+            Game = new Game();            // Создаем новый объект класса игры
+            Clock clock = new Clock();    // Время
 
             // цыкл обработки окна
             while (Window.IsOpen)
             {
+                // Дельта времени с момента последние прорисовки на экран
+                Delta = clock.Restart().AsSeconds();
+
                 //обработчик событий
                 Window.DispatchEvents();
 
