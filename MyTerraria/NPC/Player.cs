@@ -10,6 +10,7 @@ namespace MyTerraria.NPC
     {
         public const float PLAYER_MOVE_SPEED = 4f;
         public const float PLAYER_MOVE_SPEED_ACCELERATION = 0.2f;
+        public const float PLAYER_SPTITE_POSITION_Y = 25f;
 
         // Цвета
         public Color HairColor = new Color(255, 0, 0);      // Цвет волос
@@ -30,13 +31,13 @@ namespace MyTerraria.NPC
 
         public Player(World world) : base(world)
         {
-            rect = new RectangleShape(new Vector2f(Tile.TILE_SIZE*1.5f, Tile.TILE_SIZE* 2.8f));
+            rect = new RectangleShape(new Vector2f(Tile.TILE_SIZE * 1.5f, Tile.TILE_SIZE * 2.8f));
             rect.Origin = new Vector2f(rect.Size.X / 2, 0);
             isRectVisible = false;
 
             // Волосы
             asHair = new AnimSprite(Content.texPlayerHair,new SpriteSheet(1,14,0,(int)Content.texPlayerHair.Size.X, (int)Content.texPlayerHair.Size.Y));
-            asHair.Position = new Vector2f(0, 19);
+            asHair.Position = new Vector2f(0, PLAYER_SPTITE_POSITION_Y);
             asHair.Color = HairColor;
             asHair.AddAnimation("idle", new Animation(      // Анимация ожидания
                 new AnimtionFrame(0,0,0.1f)
@@ -60,7 +61,7 @@ namespace MyTerraria.NPC
 
             // Голова
             asHead = new AnimSprite(Content.texPlayerHead, new SpriteSheet(1, 20, 0, (int)Content.texPlayerHead.Size.X, (int)Content.texPlayerHead.Size.Y));
-            asHead.Position = new Vector2f(0, 19);
+            asHead.Position = new Vector2f(0, PLAYER_SPTITE_POSITION_Y);
             asHead.Color = BodyColor;
             asHead.AddAnimation("idle", new Animation(      // Анимация ожидания
                 new AnimtionFrame(0, 0, 0.1f)
@@ -84,7 +85,7 @@ namespace MyTerraria.NPC
 
             // Куртка
             asShirt = new AnimSprite(Content.texPlayerShirt,new SpriteSheet(1,20,0,(int)Content.texPlayerShirt.Size.X, (int)Content.texPlayerShirt.Size.Y));
-            asShirt.Position = new Vector2f(0, 19);
+            asShirt.Position = new Vector2f(0, PLAYER_SPTITE_POSITION_Y);
             asShirt.Color = ShirtColor;
             asShirt.AddAnimation("idle", new Animation(      // Анимация ожидания
                 new AnimtionFrame(0,0,0.1f)
@@ -108,7 +109,7 @@ namespace MyTerraria.NPC
 
             // Рукова
             asUndershirt = new AnimSprite(Content.texPlayerUndershirt,new SpriteSheet(1,20,0,(int)Content.texPlayerUndershirt.Size.X, (int)Content.texPlayerUndershirt.Size.Y));
-            asUndershirt.Position = new Vector2f(0, 19);
+            asUndershirt.Position = new Vector2f(0, PLAYER_SPTITE_POSITION_Y);
             asUndershirt.Color = ShirtColor;
             asUndershirt.AddAnimation("idle", new Animation(      // Анимация ожидания
                 new AnimtionFrame(0,0,0.1f)
@@ -132,7 +133,7 @@ namespace MyTerraria.NPC
 
             // Кисти рук
             asHands = new AnimSprite(Content.texPlayerHands,new SpriteSheet(1,20,0,(int)Content.texPlayerHands.Size.X, (int)Content.texPlayerHands.Size.Y));
-            asHands.Position = new Vector2f(0, 19);
+            asHands.Position = new Vector2f(0, PLAYER_SPTITE_POSITION_Y);
             asHands.Color = BodyColor;
             asHands.AddAnimation("idle", new Animation(      // Анимация ожидания
                 new AnimtionFrame(0,0,0.1f)
@@ -156,7 +157,7 @@ namespace MyTerraria.NPC
 
             // Ноги
             asLegs = new AnimSprite(Content.texPlayerLegs,new SpriteSheet(1,20,0,(int)Content.texPlayerLegs.Size.X, (int)Content.texPlayerLegs.Size.Y));
-            asLegs.Position = new Vector2f(0, 19);
+            asLegs.Position = new Vector2f(0, PLAYER_SPTITE_POSITION_Y);
             asLegs.Color = LegsColor;
             asLegs.AddAnimation("idle", new Animation(      // Анимация ожидания
                 new AnimtionFrame(0,0,0.1f)
@@ -180,7 +181,7 @@ namespace MyTerraria.NPC
 
             // Обувь
             asShoes = new AnimSprite(Content.texPlayerShoes,new SpriteSheet(1,20,0,(int)Content.texPlayerShoes.Size.X, (int)Content.texPlayerShoes.Size.Y));
-            asShoes.Position = new Vector2f(0, 19);
+            asShoes.Position = new Vector2f(0, PLAYER_SPTITE_POSITION_Y);
             asShoes.Color = Color.Black;
             asShoes.AddAnimation("idle", new Animation(      // Анимация ожидания
                 new AnimtionFrame(0,0,0.1f)
