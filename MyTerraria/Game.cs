@@ -46,7 +46,7 @@ namespace MyTerraria
             }
 
             // Включаем прорисовку объектов для визуальной отладки
-            DebugRender.Enabled = false;
+            DebugRender.Enabled = true;
 
         }
 

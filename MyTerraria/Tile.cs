@@ -216,5 +216,10 @@ namespace MyTerraria
 
             target.Draw(rectShape, states);
         }
+
+        public FloatRect GetFloatRect()
+        {
+            return new FloatRect(Position, new Vector2f(TILE_SIZE, TILE_SIZE));
+        }
     }
 }
