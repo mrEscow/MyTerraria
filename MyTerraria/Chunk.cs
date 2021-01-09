@@ -34,21 +34,7 @@ namespace MyTerraria
         // Установить плитку в чанке
         public void SetTite(TileType type, int i, int j, Tile upTile, Tile downTile, Tile leftTile, Tile rightTile)
         {
-            if(type != TileType.NONE)
-            {
-                titels[i][j] = new Tile(type, upTile, downTile, leftTile, rightTile);
-                titels[i][j].Position = new Vector2f(i * Tile.TILE_SIZE, j * Tile.TILE_SIZE) + Position;
-            }
-            else
-            {
-                titels[i][j] = null;
-
-                // Присваеваем соседий а соседям эту плитку
-                if (upTile != null) upTile.DownTile = null;
-                if (downTile != null) downTile.UpTile = null;
-                if (leftTile != null) leftTile.RightTile = null;
-                if (rightTile != null) rightTile.LeftTile = null;
-            }
+           
         }
 
         // Получит плитку в чанке

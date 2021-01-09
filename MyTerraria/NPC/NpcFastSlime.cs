@@ -17,7 +17,7 @@ namespace MyTerraria.NPC
 
         public override Vector2f GetJumpVecocity()
         {
-            return new Vector2f(Direction * Program.Rand.Next(15, 100), -Program.Rand.Next(8, 15));
+            return new Vector2f(Direction * World.Rand.Next(15, 100), -World.Rand.Next(8, 15));
         }
     }
 }
